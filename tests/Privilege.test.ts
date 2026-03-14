@@ -72,6 +72,7 @@ describe("UsernameCensor", () => {
       expect(matcher.hasMatch("CoolPlayer")).toBe(false);
       expect(matcher.hasMatch("GameMaster")).toBe(false);
       expect(matcher.hasMatch("xXx_Sniper_xXx")).toBe(false);
+      expect(matcher.hasMatch("Mitochondria")).toBe(false);
     });
   });
 
@@ -79,6 +80,7 @@ describe("UsernameCensor", () => {
     test("returns clean usernames unchanged", () => {
       expect(checker.censorUsername("CoolPlayer")).toBe("CoolPlayer");
       expect(checker.censorUsername("GameMaster")).toBe("GameMaster");
+      expect(checker.censorUsername("Mitochondira")).toBe("Mitochondira");
     });
 
     test("replaces profane usernames with a shadow name", () => {
